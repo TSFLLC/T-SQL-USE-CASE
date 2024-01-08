@@ -1,0 +1,16 @@
+SELECT TOP (1000) [AddressID]
+      ,[AddressLine1]
+      ,[AddressLine2]
+      ,[City]
+      --,[StateProvinceID]
+      --,[PostalCode]
+      --,[SpatialLocation]
+      --,[rowguid]
+      ,[ModifiedDate]
+	  ,LEFT([AddressLine1],8)as le
+	  ,SUBSTRING([AddressLine1],2,3)as subs
+	  ,REPLACE([AddressLine1],' ','\')as repl
+	  ,CHARINDEX(' ', [AddressLine1]) AS Position
+	  ,PATINDEX('%Shoe%',[AddressLine1]) AS Position2
+	  ,LEFT([AddressLine1],CHARINDEX(' ', [AddressLine1])) AS EXTRATHOMENUMBER --to extract house number from adress
+  FROM [AdventureWorks2017].[Person].[Address]
