@@ -1,0 +1,7 @@
+
+CONCATENATE
+
+SELECT CONCAT('Hello', ' ', 'World') AS ConcatenatedString;
+
+
+SELECT 'Hello' + ' ' + 'World' AS ConcatenatedString;
