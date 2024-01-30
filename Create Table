@@ -1,0 +1,24 @@
+IF EXISTS (SELECT 1 FROM SYS.TABLES where name ='Locations_stage')
+BEGIN 
+DROP TABLE Locations_stage
+END
+ 
+IF EXISTS (SELECT 1 FROM SYS.TABLES where name ='Locations')
+BEGIN 
+DROP TABLE Locations
+END
+ 
+ 
+CREATE TABLE [dbo].[Locations](
+  [LocationID] [int] NULL,
+  [LocationName] [varchar](100) NULL
+) 
+GO
+ 
+ 
+ 
+CREATE TABLE [dbo].[Locations_stage](
+  [LocationID] [int] NULL,
+  [LocationName] [varchar](100) NULL
+) 
+GO
