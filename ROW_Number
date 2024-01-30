@@ -1,0 +1,18 @@
+SELECT 
+    EmployeeID,
+    FirstName,
+    LastName,
+    Salary,
+    ROW_NUMBER() OVER (ORDER BY Salary DESC) AS OverallRank
+FROM 
+    Employees;
+
+-- Using ROW_NUMBER() with PARTITION BY
+SELECT 
+    EmployeeID,
+    FirstName,
+    LastName,
+    Salary,
+    ROW_NUMBER() OVER (PARTITION BY EmployeeID ORDER BY LastName DESC) AS EmployeeIDRank
+FROM 
+    Employees;
